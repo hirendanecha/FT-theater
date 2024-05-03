@@ -88,9 +88,9 @@ export function app(): express.Express {
           description:
             'Find like minded male or female unvaccinated organic humans!',
           image:
-            'https://www.organic.dating/assets/images/landingpage/profile.png',
-          site: 'https://www.organic.dating/',
-          url: 'https://www.organic.dating' + params,
+            'https://www.fuck.theater/assets/images/landingpage/profile.png',
+          site: 'https://www.fuck.theater/',
+          url: 'https://www.fuck.theater' + params,
           keywords: 'Fuck Theater',
         };
         if (
@@ -160,7 +160,7 @@ export function app(): express.Express {
               post?.thumbfilename ||
               post?.metaimage ||
               post?.imageUrl ||
-              'https://www.organic.dating/assets/images/landingpage/profile.png',
+              'https://www.fuck.theater/assets/images/landingpage/profile.png',
           };
           seo.title = talent.name;
           seo.description = strip_html_tags(talent.description);
