@@ -94,8 +94,8 @@ export function app(): express.Express {
           keywords: 'Fuck Theater',
         };
         if (
-          params.indexOf('connection/') > -1 ||
-          params.indexOf('promote-you/') > -1
+          params.indexOf('girls-in-action/') > -1 ||
+          params.indexOf('lets-fuck/') > -1
         ) {
           let id = params.split('/');
           id = id[id.length - 1];
