@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       title: 'Fuck Theater login',
       url: `${environment.webUrl}login`,
       description: 'login page',
-      image: `${environment.webUrl}assets/images/landingpage/Healing-Tube-Logo.png`,
+      image: `${environment.webUrl}assets/images/landingpage/cover.png`,
     };
     this.theme = localStorage.getItem('theme');
     // this.seoService.updateSeoMetaData(data);
@@ -119,7 +119,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     if (!token) {
       this.msg = 'Invalid captcha kindly try again!';
       this.type = 'danger';
-      // return;
+      return;
     }
     this.spinner.show();
     this.authService.customerlogin(this.loginForm.value).subscribe({
