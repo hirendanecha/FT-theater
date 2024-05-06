@@ -13,6 +13,6 @@ export const environment = {
   webUrl: webUrl,
   tubeUrl: tubeUrl,
   domain: '.fuck.theater',
-  siteKey: '0x4AAAAAAATU1CBk_lvwGxIy',
-  secretKey: '0x4AAAAAAATU1GanFiWSflL_7a_cnZt_SKM',
+  siteKey: '0x4AAAAAAAZb1uYH-5npImSI-5npImSI',
+  secretKey: '0x4AAAAAAAZb1iHb_3xGDrbllALvv3JvbwI',
 };
