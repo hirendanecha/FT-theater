@@ -86,9 +86,9 @@ export function app(): express.Express {
         var seo: any = {
           title: 'Fuck Theater',
           description:
-            'Find like minded male or female unvaccinated organic humans!',
+            'Live Girls! Talk One-on-One Face-to-Face',
           image:
-            'https://www.fuck.theater/assets/images/landingpage/profile.png',
+            'https://www.fuck.theater/assets/images/landingpage/meta.png',
           site: 'https://www.fuck.theater/',
           url: 'https://www.fuck.theater' + params,
           keywords: 'Fuck Theater',
@@ -160,7 +160,7 @@ export function app(): express.Express {
               post?.thumbfilename ||
               post?.metaimage ||
               post?.imageUrl ||
-              'https://www.fuck.theater/assets/images/landingpage/profile.png',
+              'https://www.fuck.theater/assets/images/landingpage/meta.png',
           };
           seo.title = talent.name;
           seo.description = strip_html_tags(talent.description);
