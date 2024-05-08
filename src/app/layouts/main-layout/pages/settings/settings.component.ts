@@ -24,7 +24,7 @@ export class SettingsComponent {
     private seoService:SeoService
   ) {
     const data = {
-      title: 'Fuck Theater Settings',
+      title: 'Fuck.theater Settings',
       url: `${location.href}`,
       description: '',
     };

@@ -29,7 +29,7 @@ export class FreedomPageComponent {
 
     this.getPages();
     const data = {
-      title: 'Fuck Theater Let’s Fuck!',
+      title: 'Fuck.theater Let’s Fuck!',
       url: `${location.href}`,
       description: '',
     };

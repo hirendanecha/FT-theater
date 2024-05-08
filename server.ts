@@ -84,14 +84,14 @@ export function app(): express.Express {
         }
         const params = req.params[0];
         var seo: any = {
-          title: 'Fuck Theater',
+          title: 'Fuck.theater',
           description:
             'Live Girls! Talk One-on-One Face-to-Face',
           image:
             'https://www.fuck.theater/assets/images/landingpage/meta.png',
           site: 'https://www.fuck.theater/',
           url: 'https://www.fuck.theater' + params,
-          keywords: 'Fuck Theater',
+          keywords: 'Fuck.theater',
         };
         if (
           params.indexOf('girls-in-action/') > -1 ||
@@ -132,7 +132,7 @@ export function app(): express.Express {
           console.log({ params }, { id }, { profile: JSON.stringify(profile) });
           const talent = {
             name: profile[0]?.userName,
-            description: 'Fuck Theater',
+            description: 'Fuck.theater',
             image: profile?.[0]?.profilePictures?.[0]?.imageUrl,
           };
           // description: profile[0]?.FirstName + ' ' + profile[0]?.LastName,
@@ -154,7 +154,7 @@ export function app(): express.Express {
           const pdhtml = document.createElement('div');
           pdhtml.innerHTML = post?.postdescription || post?.metadescription;
           const talent = {
-            name: post?.title || post?.albumname || 'Fuck Theater Post',
+            name: post?.title || post?.albumname || 'Fuck.theater Post',
             description: pdhtml?.textContent || 'Post content',
             image:
               post?.thumbfilename ||
@@ -175,7 +175,7 @@ export function app(): express.Express {
 
           console.log('group===>', group);
           const talent = {
-            name: `Fuck Theater Research ${group?.PageTitle}`,
+            name: `Fuck.theater Research ${group?.PageTitle}`,
             description: group?.PageDescription,
             image: group?.CoverPicName || group?.ProfilePicName,
           };
