@@ -3,6 +3,10 @@
   width: 100vw;
   // background: #11134d;
 
+  .text-header {
+    text-transform: none;
+  }
+
   .text-s {
     font-size: min(max(32px, 2vw), 42px);
     // font-size: 42px;
