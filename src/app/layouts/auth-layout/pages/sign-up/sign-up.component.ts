@@ -78,7 +78,7 @@ export class SignUpComponent implements OnInit, AfterViewInit {
     private tokenStorageService: TokenStorageService
   ) {
     const data = {
-      title: 'Fuck Theater Registration',
+      title: 'Fuck.theater Registration',
       url: `${environment.webUrl}sign-up`,
       description: 'Registration page',
       image: `${environment.webUrl}assets/images/landingpage/cover.png`,

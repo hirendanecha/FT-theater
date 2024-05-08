@@ -19,7 +19,7 @@ export class SeeFirstUserComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     const data = {
-      title: 'Fuck Theater See First User',
+      title: 'Fuck.theater See First User',
       url: `${window.location.href}`,
       description: '',
     };

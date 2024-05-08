@@ -125,7 +125,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     config.keyboard = false;
     config.pauseOnHover = false;
     const data = {
-      title: 'Fuck Theater',
+      title: 'Fuck.theater',
       url: `${location.href}`,
       description: '',
     };

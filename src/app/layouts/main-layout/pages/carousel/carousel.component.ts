@@ -60,7 +60,7 @@ export class CarouselComponent implements OnInit {
     private seoService:SeoService
   ) {
     const data = {
-      title: 'Fuck Theater Carousel',
+      title: 'Fuck.theater Carousel',
       url: `${location.href}`,
       description: '',
     };

@@ -37,7 +37,7 @@ export class CommunitiesComponent {
     }
     // this.getCommunities();
     const data = {
-      title: 'Fuck Theater Connection',
+      title: 'Fuck.theater Connection',
       url: `${window.location.href}`,
       description: '',
     };

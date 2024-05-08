@@ -12,7 +12,7 @@ export class ConnectionsComponent implements OnInit {
     private seoService:SeoService
   ) {
     const data = {
-      title: 'Fuck Theater Girls in Action',
+      title: 'Fuck.theater Girls in Action',
       url: `${location.href}`,
       description: '',
     };
