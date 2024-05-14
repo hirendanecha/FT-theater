@@ -15,4 +15,7 @@ export const environment = {
   domain: '.fuck.theater',
   siteKey: '0x4AAAAAAAZb1uYH-5npImSI-5npImSI',
   secretKey: '0x4AAAAAAAZb1iHb_3xGDrbllALvv3JvbwI',
+  qrLink: `${webUrl}settings/edit-profile/`,
+  EncryptIV: 8625401029409790,
+  EncryptKey: 8625401029409790,
 };
