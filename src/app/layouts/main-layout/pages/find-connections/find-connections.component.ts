@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { RequestModalComponent } from 'src/app/@shared/modals/request-modal/request-modal.component';
 import { SubscribeModalComponent } from 'src/app/@shared/modals/subscribe-model/subscribe-modal.component';
 import { CustomerService } from 'src/app/@shared/services/customer.service';
 import { SeoService } from 'src/app/@shared/services/seo.service';
 import { SharedService } from 'src/app/@shared/services/shared.service';
+import { SocketService } from 'src/app/@shared/services/socket.service';
+import { ToastService } from 'src/app/@shared/services/toast.service';
 import { TokenStorageService } from 'src/app/@shared/services/token-storage.service';
+import { UnsubscribeProfileService } from 'src/app/@shared/services/unsubscribe-profile.service';
 
 @Component({
   selector: 'app-find-connections',
@@ -27,7 +32,11 @@ export class ConnectionsComponent implements OnInit {
     private customerService: CustomerService,
     private modelService: NgbModal,
     private tokenStorageService: TokenStorageService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService,
+    private unsubscribeProfileService: UnsubscribeProfileService,
+    private socketService: SocketService,
+    private toastService: ToastService
   ) {
     const data = {
       title: 'Fuck.theater Connections',
@@ -43,15 +52,19 @@ export class ConnectionsComponent implements OnInit {
   }
 
   getProfile(paggination): void {
+    this.spinner.show();
     const gender = this.tokenStorageService.getUser()?.gender;
     this.customerService
-      .getProfiles(paggination.page, paggination.limit, this.profileId, gender)
+      .getProfiles(paggination.page, paggination.limit, this.profileId, String(gender))
       .subscribe({
         next: (res: any) => {
           this.profileList = res.data;
+          this.spinner.hide();
           // console.log('hello', res);
         },
-        error: (err) => {},
+        error: (err) => {
+          this.spinner.hide();
+        },
       });
   }
 
@@ -87,11 +100,47 @@ export class ConnectionsComponent implements OnInit {
 
   sendMessage() {}
 
-  SendMessageInpt(dataList) {
-    // const modalRef = this.modelService.open(SubscribeModalComponent, {
-    //   centered: true,
-    // });
-    // modalRef.componentInstance.dataList = dataList;
-    this.router.navigate(['/chats'])
+  SendMessageInpt(dataList, type: string) {
+    const modalRef = this.modelService.open(RequestModalComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.dataList = dataList;
+    modalRef.componentInstance.title = type;
+    modalRef.result.then((res) => {
+      if (res === 'success') {
+        this.inviteForChat(dataList);
+      }
+    });
+  }
+
+  inviteForChat(invite): void {
+    this.socketService.createChatRoom(
+      {
+        profileId1: this.profileId,
+        profileId2: invite?.profileId,
+      },
+      (data: any) => {
+        this.toastService.success('Invitation sent successfully');
+        // console.log(data);
+      }
+    );
+  }
+
+  unsubscribe(post: any): void {
+    // post['hide'] = true;
+    console.log(post);
+    
+    this.unsubscribeProfileService
+      .create({
+        profileId: this.profileId,
+        unsubscribeProfileId: post?.profileId,
+      })
+      .subscribe({
+        next: (res) => {
+          this.toastService.danger('Unblock successfully');
+          this.getProfile(this.pagination);
+          return true;
+        },
+      });
   }
 }

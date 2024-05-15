@@ -106,6 +106,7 @@ import {
   faUsers,
   faPhoneSlash,
   faTicketAlt,
+  faBan,
 } from '@fortawesome/free-solid-svg-icons';
 import { ClaimTokenModalComponent } from './modals/clai-1776-token-modal/claim-token-modal.component';
 import { WalletLinkComponent } from './modals/wallet-download-modal/1776-wallet.component';
@@ -143,6 +144,7 @@ import { AppQrModalComponent } from './modals/app-qr-modal/app-qr-modal.componen
 import { MediaGalleryComponent } from './components/media-gallery/media-gallery.component';
 import { GalleryImgPreviewComponent } from './components/gallery-img-preview/gallery-img-preview.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { RequestModalComponent } from './modals/request-modal/request-modal.component';
 
 const sharedComponents = [
   ConfirmationModalComponent,
@@ -181,6 +183,7 @@ const sharedComponents = [
   ForwardChatModalComponent,
   AppQrModalComponent,
   GalleryImgPreviewComponent,
+  RequestModalComponent
 ];
 
 const sharedModules = [
@@ -302,7 +305,8 @@ export class SharedModule {
       faPhotoFilm,
       faUsers,
       faPhoneSlash,
-      faTicketAlt
+      faTicketAlt,
+      faBan,
     );
   }
 }

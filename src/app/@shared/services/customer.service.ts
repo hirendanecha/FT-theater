@@ -75,7 +75,7 @@ export class CustomerService {
   }
 
   updateProfile(id, customer: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/profile/${id}?q=${Date.now()}`, customer);
+    return this.http.put(`${this.baseUrl}/profile/${id}`, customer);
   }
 
   getProfileList(searchText): Observable<object> {
@@ -85,7 +85,7 @@ export class CustomerService {
   }
   getProfiles(pages, limit, profileId, gender): Observable<object> {
     return this.http.get(
-      `${this.baseUrl}/get-profiles/${profileId}?page=${pages}&limit=${limit}&gender=${gender}`
+      `${this.baseUrl}/get-profiles/${profileId}?page=${pages}&limit=${limit}&gender=${gender}&?q=${Date.now()}`
     );
   }
 

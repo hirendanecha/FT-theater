@@ -29,17 +29,17 @@ const routes: Routes = [
         },
         // canActivate: mapToCanActivate([AuthenticationGuard]),
       },
-      // {
-      //   path: 'connection',
-      //   loadChildren: () =>
-      //     import('./pages/find-connections/find-connections.module').then(
-      //       (m) => m.ConnectionsModule
-      //     ),
-      //   data: {
-      //     isShowLeftSideBar: true,
-      //   },
-      //   canActivate: mapToCanActivate([AuthenticationGuard]),
-      // },
+      {
+        path: 'girls-in-action',
+        loadChildren: () =>
+          import('./pages/find-connections/find-connections.module').then(
+            (m) => m.ConnectionsModule
+          ),
+        data: {
+          isShowLeftSideBar: true,
+        },
+        canActivate: mapToCanActivate([AuthenticationGuard]),
+      },
       {
         path: 'carousel',
         loadChildren: () =>
@@ -53,7 +53,7 @@ const routes: Routes = [
         canActivate: mapToCanActivate([AuthenticationGuard]),
       },
       {
-        path: 'girls-in-action',
+        path: 'community',
         loadChildren: () =>
           import('./pages/communities/communities.module').then(
             (m) => m.CommunitiesModule
