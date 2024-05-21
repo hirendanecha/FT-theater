@@ -69,7 +69,7 @@ export class SeoService {
     }
 
     if (!tagValue.image) {
-      tagValue.image = 'https://freedom.buzz/assets/images/banner/cover.png';
+      tagValue.image = 'https://fuck.theater/assets/images/banner/cover.png';
     }
 
     this.meta.updateTag({
