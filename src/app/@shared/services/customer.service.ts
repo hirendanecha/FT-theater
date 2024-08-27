@@ -158,4 +158,8 @@ export class CustomerService {
     const url = 'https://ring-api.fuck.theater/api/v1/customers/group-call-notification';
     return this.http.post(url, callerData);
   }
+  
+  updateNotificationSound(data: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/onOff-notification`, data);
+  }
 }
